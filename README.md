@@ -1,12 +1,13 @@
 Spring MVC
 =============
-什么是MVC,是模型(model)－视图(view)－控制器(controller)的缩写,让程序分层，分工合作，又协同工作，常用的框架又struts,spring等
+MVC是模型(model)－视图(view)－控制器(controller)的缩写,让程序分层，分工合作，又协同工作，常用的框架又struts,spring等
 视图(view):重点关注数据的呈现
 模型(Model):业务数据的表示，关注职称业务信息的构成，通常是多个业务实体的组合
 控制器(controller):调用业务逻辑产生合适的数据(Model),传递数据给视图层(View)用于呈现,是连通它们两的桥梁
 例如前端工程师和后端工程师，它们的工作不会互相干扰，只会各自专注和完成自己的事情，但是又必须协同工作。
 
-SpringMVC基本概念
+基本概念
+----------------
 DispatcherServlet
 就是它的前端控制器，浏览器的请求正式通过DispatcherServlet进行分发到达我们一个合适的controller来生产我们需要的业务数据model
 model再通过DispatcherServlet传递给view来完成最终的页面呈现.
