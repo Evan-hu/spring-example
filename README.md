@@ -62,4 +62,3 @@ spring-mvc-dispatcher.xml是springmvc的配置，内有详细的解析,包括:
 	9.重定向
 	10.文件上传
 	11.怎么返回json数据
---------------------
