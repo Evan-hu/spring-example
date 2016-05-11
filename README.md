@@ -40,16 +40,17 @@ SpringMVC中，对Model的一种表现形式,当然还有其他的类如Model,�
 负责呈现页面
 
 ##例子
-com.babylove.www.springmvc包中,介绍了springmvc的例子
+包中,介绍了springmvc的例子
 ###1.spring-mvc-dispatcher.xml是springmvc的配置，内有详细的解析,包括:
 	1.context:annotation-config讲解
 	2.context:component-scan讲解
 	3.mvc:annotation-driven讲解
 	4.mvc:resources讲解
 	5.org.springframework.web.servlet.view.InternalResourceViewResolver讲解
-###2.helloworld
+###2.com.babylove.www.springmvc.helloworld
 	一个最简单的springmvc例子
-###3.结合controller,service,model模拟一个简单的需求来讲解怎么样去开发我们自己的controller
+###3.com.babylove.www.springmvc.mycourse
+	结合controller,service,model模拟一个简单的需求来讲解怎么样去开发我们自己的controller
 	1.@Controller标签
 	2.类级别和方法级别的@RequestMapping标签
 	3.@RequestParam标签
