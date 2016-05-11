@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+	<!-- 
+		使用context:annotation-config会自动注册以下6个类 可以进入AnnotationConfigBeanDefinitionParser.class查看
+		org.springframework.context.annotation.internalConfigurationAnnotationProcessor,
+		org.springframework.context.annotation.internalAutowiredAnnotationProcessor,
+		org.springframework.context.annotation.internalRequiredAnnotationProcessor,
+		org.springframework.context.annotation.internalCommonAnnotationProcessor,
+		org.springframework.context.event.internalEventListenerProcessor,
+		org.springframework.context.event.internalEventListenerFactory,
+		以上6个类是日志打印出来的，但是是没法找到的这6个类的，因为它分别对应以下6个类，请查看AnotationConfigUtils.class里面的常量定义和registerAnnotationConfigProcessors方法
+		org.springframework.context.annotation.ConfigurationClassPostProcessor
+		org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor
+		org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor
+		org.springframework.context.annotation.CommonAnnotationBeanPostProcessor
+		org.springframework.context.event.EventListenerMethodProcessor
+		org.springframework.context.event.DefaultEventListenerFactory
+	 -->
+<!-- 	<context:annotation-config /> -->
+	
+	<!-- 
+		使用context:component-scan也会自动注册上面那6个类(可以查看启动日志对比)
+		并且会扫描指定目录下所有类
+		但是记得要把use-default-filters设置成false
+		否则它还是回去扫描@Controller,@Service,@Repostory,@Component这些标签
+	 -->
+	<context:component-scan base-package="com.babylove.www" use-default-filters="false">
+		<!-- 只扫描带有@Controller标签的类,@Service等其他标签，交给我们的spring上下文来进行处理 -->
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<!-- 
+		HandlerMapping,HandlerAdapter,HandlerResolver等无需配置，SpringMVC可以默认
+		你会在日志启动时候看到以下(部分)语句
+		
+		创建DefaultAnnotationHandlerMapping,在spring-mvc-dispatcher找不到，使用默认
+		Finished creating instance of bean 'org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping'
+		No HandlerMappings found in servlet 'spring-mvc-dispatcher': using default
+		
+		创建3个Adapter,还是找不到，继续默认
+		Creating instance of bean 'org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter'
+		No HandlerAdapters found in servlet 'spring-mvc-dispatcher': using default
+		
+		创建3个EceptionResolver,继续找不到，默认
+		Creating instance of bean 'org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerExceptionResolver'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver'
+		No HandlerExceptionResolvers found in servlet 'spring-mvc-dispatcher': using default
+		
+		
+		
+		SpringMVC 3.1之后由RequestMappingHandlerMapping和RequestMappingHandlerAdapter
+		代替
+		DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter
+	 -->
+	
+	<!-- 
+		会自动注册以下RequestMappingHandlerMapping,RequestMappingHandlerAdapter,ExceptionHandlerExceptionResolver这些bean去支持@RequestMapping, @ExceptionHandler等标签的使用
+		详情和额外功能请看Spring官方文档21.16.1
+		使用了mvc:annotation-driven后，你可以日志中找到这句话
+		Loaded x bean definitions from location pattern [classpath:spring-mvc-dispatcher.xml]
+		x=数字，这个数字比不使用mvc:annotation-driven增加了13，也就是说mvc:annotation-driven会帮我们注册13个bean
+		
+		部分加载类如下
+		你可以在日志中发现以下语句
+		Creating instance of bean 'mvcUriComponentsContributor'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter'
+		Creating instance of bean 'mvcUriComponentsContributor'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver'
+		Creating instance of bean 'org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver'
+		对应一下这几个类
+		org.springframework.web.servlet.config.AnnotationDrivenBeanDefinitionParser$CompositeUriComponentsContributorFactoryBean
+		org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+		org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter
+		org.springframework.web.servlet.handler.MappedInterceptor
+		org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver
+		org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver
+		org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver
+		
+	-->
+	<mvc:annotation-driven/>
+	
+	<!-- 处理静态资源和控制缓存时间,也可以使用代码实现，请看com.babylove.www.springmvc.util.WebConfig -->
+	<mvc:resources mapping="/resources/**" location="/resources/" >
+		<mvc:cache-control max-age="3600" cache-public="true"/>
+	</mvc:resources>
+	
+	<!-- 
+		页面解析器
+		如果不喜欢使用配置的话，也可以使用代码实现，请看com.babylove.www.springmvc.util.WebConfig
+	 -->
+<!-- 	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+<!-- 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/> -->
+<!-- 		<property name="prefix" value="/WEB-INF/jsp/"/> -->
+<!-- 		<property name="suffix" value=".jsp"/> -->
+<!-- 	</bean> -->
+
+	<!-- 
+		你也可以使用这样的写法，来代替上面的页面解析器
+		如果不喜欢使用配置的话，也可以使用代码实现，请看com.babylove.www.springmvc.util.WebConfig
+	 -->
+<!-- 	<mvc:view-resolvers> -->
+<!-- 		<mvc:jsp prefix="/WEB-INF/jsp/" suffix=".jsp"/> -->
+<!-- 	</mvc:view-resolvers> -->
+	
+	<!-- 
+		ContentNegotiatingViewResolver它本身并不负责去分解视图
+		但是它可以根据客户端的请求委派,选择其他ViewResolver(基于2种策略来选择)
+		ContentNegotiatingViewResolver会根据request media type(媒体类型)自动去选择合适的ViewResolver来处理
+		在多个ViewResolver中,第一个ViewResolver它的返回内容拥有兼容性
+		如果第一个兼容视图无法支持，那么会去选择defaultViews来继续处理
+		详情请看spring官方文档 21.5.4
+	 -->
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+				<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="prefix" value="/WEB-INF/jsp/"/>
+					<property name="suffix" value=".jsp"/>
+				</bean>
+			</list>
+		</property>
+		<property name="defaultViews">
+			<list>
+<!-- 				依赖jackson包 -->
+				<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 
+		使用org.springframework.web.multipart.commons.CommonsMultipartResolver来上传文件
+		这是springmvc封装过的一个上传文件操作类
+		使我们的上传功能更加简单方便
+		使用前需要引用commons-fileupload.jar
+		详情请查看spring官方文档21.10
+	 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	    <!-- 文件最大字节限制 100mb -->
+	    <property name="maxUploadSize" value="104857600"/>
+	</bean>
+</beans>
