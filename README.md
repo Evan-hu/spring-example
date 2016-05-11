@@ -6,7 +6,6 @@ MVC是模型(model)－视图(view)－控制器(controller)的缩写,让程序分
 例如前端工程师和后端工程师，它们的工作不会互相干扰，只会各自专注和完成自己的事情，但是又必须协同工作。
 
 ##基本概念
-----------------
 ###DispatcherServlet
 就是它的前端控制器，浏览器的请求正式通过DispatcherServlet进行分发到达我们一个合适的controller来生产我们需要的业务数据model
 model再通过DispatcherServlet传递给view来完成最终的页面呈现.
@@ -40,17 +39,17 @@ SpringMVC中，对Model的一种表现形式,当然还有其他的类如Model,�
 ###View
 负责呈现页面
 
+##例子
 com.babylove.www.springmvc包中,介绍了springmvc的例子
-spring-mvc-dispatcher.xml是springmvc的配置，内有详细的解析,包括:
+###1.spring-mvc-dispatcher.xml是springmvc的配置，内有详细的解析,包括:
 	1.context:annotation-config讲解
 	2.context:component-scan讲解
 	3.mvc:annotation-driven讲解
 	4.mvc:resources讲解
 	5.org.springframework.web.servlet.view.InternalResourceViewResolver讲解
-1.helloworld
+###2.helloworld
 	一个最简单的springmvc例子
-2.
-	结合controller,service,model模拟一个简单的需求来讲解怎么样去开发我们自己的controller
+###3.结合controller,service,model模拟一个简单的需求来讲解怎么样去开发我们自己的controller
 	1.@Controller标签
 	2.类级别和方法级别的@RequestMapping标签
 	3.@RequestParam标签
