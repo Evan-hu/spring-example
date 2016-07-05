@@ -6,11 +6,6 @@
 * 常用的两种注入方式
 	* 设置注入
 	* 构造器注入
-
-请看[这里](https://github.com/l81893521/java-example/tree/master/src/main/java/online/babylove/www/jdbc)
-
-##反射(reflection)
-请看[这里](https://github.com/l81893521/java-example/tree/master/src/main/java/online/babylove/www/reflection)
-
-##IO
-请看[这里](https://github.com/l81893521/java-example/tree/master/src/main/java/online/babylove/www/io)
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo1.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo1)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo1/Test1.java)
