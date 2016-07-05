@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 						http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 						http://www.springframework.org/schema/tx 
@@ -10,5 +11,37 @@
 						http://www.springframework.org/schema/context 
 						http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 						
+	<!-- 
+		使用context:annotation-config会自动注册以下6个类 可以进入AnnotationConfigBeanDefinitionParser.class查看
+		org.springframework.context.annotation.internalConfigurationAnnotationProcessor,
+		org.springframework.context.annotation.internalAutowiredAnnotationProcessor,
+		org.springframework.context.annotation.internalRequiredAnnotationProcessor,
+		org.springframework.context.annotation.internalCommonAnnotationProcessor,
+		org.springframework.context.event.internalEventListenerProcessor,
+		org.springframework.context.event.internalEventListenerFactory,
+		以上6个类是日志打印出来的，但是是没法找到的这6个类的，因为它分别对应以下6个类，请查看AnotationConfigUtils.class里面的常量定义和registerAnnotationConfigProcessors方法
+		org.springframework.context.annotation.ConfigurationClassPostProcessor
+		org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor
+		org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor
+		org.springframework.context.annotation.CommonAnnotationBeanPostProcessor
+		org.springframework.context.event.EventListenerMethodProcessor
+		org.springframework.context.event.DefaultEventListenerFactory
+	 -->
+<!-- 	<context:annotation-config /> -->
+						
+	<!-- 
+		使用context:component-scan也会自动注册上面那6个类(可以查看启动日志对比)
+		并且会扫描指定目录下所有类
+		但是记得要把use-default-filters设置成false
+		否则它还是回去扫描@Controller,@Service,@Repostory,@Component这些标签
+	 -->					
+	<context:component-scan base-package="com.babylove.www" use-default-filters="false">
+		<!-- 只扫描带有@Service,@Repository标签的类,@Controller等标签，交给spring-mvc上下文来进行处理 -->
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	</context:component-scan>
 	
+	
+	
+	<import resource="/iocAndAop/demo1.xml"/>
 </beans>

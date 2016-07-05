@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import com.babylove.www.springmvc.mycourse.model.Course;
 
 
-@Service
 public interface CourseService {
 	
 	/**

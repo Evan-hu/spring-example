@@ -6,7 +6,7 @@ import com.babylove.www.springmvc.mycourse.model.Chapter;
 import com.babylove.www.springmvc.mycourse.model.Course;
 import com.babylove.www.springmvc.mycourse.service.CourseService;
 
-@Service("courseService")
+@Service
 public class CourseServiceImpl implements CourseService {
 	/**
 	 * 这个方法并没有去连接数据库
