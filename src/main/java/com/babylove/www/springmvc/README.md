@@ -16,7 +16,7 @@
 	也就是我们MVC中的C,它就是调用我们的业务逻辑，生成model的地方
 
 ###HandlerAdapter
-	它是在DispatcherServlet内部使用的一个类，它其实就是我们controller的一个表现形式(因为springMVC里面并没有一个类或者接口叫做		Controller)
+它是在DispatcherServlet内部使用的一个类，它其实就是我们controller的一个表现形式(因为springMVC里面并没有一个类或者接口叫做Controller)
 
 
 ###HandlerInterceptor
