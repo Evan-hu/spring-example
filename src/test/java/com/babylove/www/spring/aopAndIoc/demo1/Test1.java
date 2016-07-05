@@ -14,12 +14,18 @@ public class Test1 extends UnitTestBase{
 		super("classpath:/applicationContext.xml");
 	}
 	
+	/**
+	 * 设值注入测试
+	 */
 	@Test
 	public void testSetter(){
 		InjectionService injectionService = super.getBean("injectionService");
 		injectionService.save("这是要保存的数据");
 	}
 	
+	/**
+	 * 构造注入测试
+	 */
 	@Test
 	public void testConstructor(){
 		InjectionService injectionService = super.getBean("injectionService1");
