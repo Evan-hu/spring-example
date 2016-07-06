@@ -44,4 +44,5 @@
 	
 	
 	<import resource="/iocAndAop/demo1.xml"/>
+	<import resource="/iocAndAop/demo2.xml"/>
 </beans>

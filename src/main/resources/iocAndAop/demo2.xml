@@ -11,15 +11,11 @@
 						http://www.springframework.org/schema/context 
 						http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 	
-	<!-- 设值注入 -->					
-	<bean id="injectionService" class="com.babylove.www.spring.aopAndIoc.demo1.service.InjectionServiceImpl">
-		<property name="injectionDao" ref="injectionDao"></property>
+	<!-- 作用域默认是singleton,每个容器中只存在一份,可以不用写,这里是为了方便演示 -->
+	<bean id="beanScopeBySingleton" class="com.babylove.www.spring.aopAndIoc.demo2.BeanScopeBySingleton" scope="singleton">
 	</bean>
 	
-	<!-- 构造器注入 -->
-	<bean id="injectionService1" class="com.babylove.www.spring.aopAndIoc.demo1.service.InjectionServiceImpl">
-		<constructor-arg name="injectionDao" ref="injectionDao"></constructor-arg>
+	<!-- 作用域改为prototype,每次请求都创建新的实例-->
+	<bean id="beanScopeByPrototype" class="com.babylove.www.spring.aopAndIoc.demo2.BeanScopeByPrototype" scope="prototype">
 	</bean>
-	
-	<bean id="injectionDao" class="com.babylove.www.spring.aopAndIoc.demo1.dao.InjectionDaoImpl"></bean>
 </beans>

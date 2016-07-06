@@ -15,6 +15,7 @@ public class InjectionServiceImpl implements InjectionService{
 	 * @param injectionDao
 	 */
 	public InjectionServiceImpl(InjectionDao injectionDao) {
+		System.out.println("通过构造器注入方式");
 		this.injectionDao = injectionDao;
 	}
 
@@ -30,6 +31,7 @@ public class InjectionServiceImpl implements InjectionService{
 	 * @param injectionDao
 	 */
 	public void setInjectionDao(InjectionDao injectionDao) {
+		System.out.println("通过设值注入方式");
 		this.injectionDao = injectionDao;
 	}
 }
