@@ -26,4 +26,4 @@
 	* 销毁
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo3.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo3)
-* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo2/Demo3Test.java)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo3/Demo3Test.java)
