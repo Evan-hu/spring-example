@@ -17,3 +17,13 @@
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo2.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo2)
 * [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo2/Demo2Test.java)
+
+##生命周期
+* bean的声明周期:
+	* 定义
+	* 初始化
+	* 使用
+	* 销毁
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo3.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo3)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo2/Demo3Test.java)
