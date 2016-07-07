@@ -27,3 +27,16 @@
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo3.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo3)
 * [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo3/Demo3Test.java)
+
+##Aware
+* Spring提供了一些以Aware结尾的接口。如果我们实现了这些接口，在初始化的时候，就能获取相应的资源
+* 通过实现Aware接口，可以对Spring相应资源进行操作
+* 为对Spring进行简单扩展提供了方便入口
+* 实现这些接口的类，必须在xml中定义
+* ApplicationContextAware : 获取applicationContext
+* BeanNameAware : 获取bean的name
+* 还有ApplicationEventPublisherAware,BeanClassLoaderAware,BeanFactoryAware,BootstrapContextAware,LoadTimeWeaverAware,MessageSourceAware,
+NotificationPublisherAware,PortletConfigAware,PortletContextAware,ResourceLoaderAware,ServletConfigAware,ServletContextAware等
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo4.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo4)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo4/Demo4Test.java)
