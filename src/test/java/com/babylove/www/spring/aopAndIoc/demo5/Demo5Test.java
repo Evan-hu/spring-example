@@ -1,4 +1,4 @@
-package com.babylove.www.spring.aopAndIoc;
+package com.babylove.www.spring.aopAndIoc.demo5;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
