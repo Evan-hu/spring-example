@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-4.2.xsd 
+						http://www.springframework.org/schema/jee
+						http://www.springframework.org/schema/jee/spring-jee-4.2.xsd 
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-4.2.xsd"
+						default-autowire="byName">
+	
+	<!--  
+		在以前，我们需要像这样来配置
+		<bean id="autoWiringService" class="com.babylove.www.spring.aopAndIoc.demo5.AutoWiringService">
+			<property name="autoWiringDao" ref="autoWiringDao"></property>
+		</bean>
+	-->
+	
+	<!-- 
+		当设置了default-autowire="byName"之后，像这样配置就可以了
+		但是确保一点，配置文件中dao的beanId要和service代码中的dao名称一致
+		也就是说bean id="autoWiringDao",属性里面也必须叫做autoWiringDao
+	 -->
+	<bean id="autoWiringService" class="com.babylove.www.spring.aopAndIoc.demo5.AutoWiringService">
+	</bean>
+	
+	<!-- 
+		当default-autowire="byName"的时候
+			如果id="autoWiringDao1",那就会报错，因为id和属性里面名字不一致
+		当default-autowire="byType"的时候,是根据类型来装配
+			像这样id随便写
+			<bean id="autoWiringDao11" class="com.babylove.www.spring.aopAndIoc.demo5.AutoWiringDao">
+			或者直接去掉id
+			<bean class="com.babylove.www.spring.aopAndIoc.demo5.AutoWiringDao">
+			都可以
+		当default-autowire="constructor"的时候，是根据构造函数来装配
+			自然和上面一样，跟id关系不大
+	 -->
+	<bean id="autoWiringDao" class="com.babylove.www.spring.aopAndIoc.demo5.AutoWiringDao">
+	</bean>
+	
+	
+</beans>

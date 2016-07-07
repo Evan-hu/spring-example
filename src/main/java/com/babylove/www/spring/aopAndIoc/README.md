@@ -40,3 +40,8 @@ NotificationPublisherAware,PortletConfigAware,PortletContextAware,ResourceLoader
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo4.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo4)
 * [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo4/Demo4Test.java)
+
+##Bean的自动装配(Autowiring)
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo5.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo5)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo5/Demo5Test.java)
