@@ -45,3 +45,15 @@ NotificationPublisherAware,PortletConfigAware,PortletContextAware,ResourceLoader
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo5.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo5)
 * [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo5/Demo5Test.java)
+
+##@Component,@Repository,@Service,@Controller和<context:annotation-config>,<context:component-scan>
+* @Component,@Repository,@Service,@Controller这4个标签都是用于标识类，告诉spring它需要被注册
+	* @Component是一个通用注解，可以用于任何bean
+	* @Repository通常用于注解DAO类
+	* @Service通常用于注解Service类
+	* @Controller通常用于注解Controller类
+	* @Repository,@Service,@Controller都是@Component的子注解,都是基于@Component定义的注解
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo6.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo6)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo6/Demo6Test.java)
+	
