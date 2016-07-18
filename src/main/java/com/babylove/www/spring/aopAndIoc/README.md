@@ -56,4 +56,10 @@ NotificationPublisherAware,PortletConfigAware,PortletContextAware,ResourceLoader
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo6.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo6)
 * [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo6/Demo6Test.java)
-	
+
+#@Autowired
+* 可以将@Autowired标签理解为传统的setter方法
+* @Autowired标签也可以用于构造器
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/iocAndAop/demo7.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc/demo7)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aopAndIoc/demo7/Demo7Test.java)	
