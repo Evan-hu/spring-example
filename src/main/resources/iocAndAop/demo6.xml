@@ -20,9 +20,9 @@
 	 -->
 	<context:component-scan base-package="com.babylove.www.spring.aopAndIoc.demo6">
 		<!-- 类型为正则表达式，只扫描约定格式的类 -->
- 		<!--<context:include-filter type="regex" expression="com.babylove.www.spring.aopAndIoc.demo6.*ComponentDemo"></context:include-filter> -->
+ 		<!-- <context:include-filter type="regex" expression="com.babylove.www.spring.aopAndIoc.demo6.*ComponentDemo"></context:include-filter> -->
 		<!-- 类型为annotation,排除@Service标签注解的类 -->
- 		<!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"></context:exclude-filter> -->
+ 		<!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"></context:exclude-filter> -->
  		
  		<!-- 还有type="assignable|aspectj|custom" -->
 	</context:component-scan>

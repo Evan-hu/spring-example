@@ -19,6 +19,7 @@ public class Demo8Test extends UnitTestBase{
 		BeanService beanService = super.getBean("beanService");
 		beanService.printList();
 		beanService.printMap();
+		beanService.printBean();
 	}
 
 }

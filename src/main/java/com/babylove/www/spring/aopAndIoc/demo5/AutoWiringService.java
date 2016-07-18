@@ -32,8 +32,6 @@ public class AutoWiringService {
 	 * @param autoWiringDao
 	 */
 	public void setAutoWiringDao(AutoWiringDao autoWiringDao) {
-		System.out.println("setAutoWiringDao");
 		this.autoWiringDao = autoWiringDao;
 	}
-
 }
