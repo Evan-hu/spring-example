@@ -11,7 +11,7 @@ import com.babylove.www.spring.aopAndIoc.demo1.service.InjectionService;
 public class Test1 extends UnitTestBase{
 	
 	public Test1() {
-		super("classpath:/applicationContext.xml");
+		super("classpath:/iocAndAop/demo1.xml");
 	}
 	
 	/**

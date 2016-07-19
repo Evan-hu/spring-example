@@ -18,8 +18,8 @@ public class Demo8Test extends UnitTestBase{
 	public void autowiredTest(){
 		BeanService beanService = super.getBean("beanService");
 		beanService.printList();
-		beanService.printMap();
-		beanService.printBean();
+//		beanService.printMap();
+//		beanService.printBean();
 	}
 
 }
