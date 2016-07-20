@@ -18,8 +18,8 @@ public class Demo9Test extends UnitTestBase{
 	public void testGetBean(){
 		BeanService beanService = super.getBean("getBeanService");
 		System.out.println(beanService.getClass().hashCode());
-		BeanService beanService1 = super.getBean("getBeanService");
-		System.out.println(beanService1.getClass().hashCode());
-		BeanService beanService2 = super.getBean("getBeanService2");
+		beanService = super.getBean("getBeanService");
+		System.out.println(beanService.getClass().hashCode());
+//		BeanService beanService2 = super.getBean("getBeanService2");
 	}
 }

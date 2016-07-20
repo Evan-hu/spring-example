@@ -3,6 +3,9 @@ package com.babylove.www.spring.aopAndIoc.demo9;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.babylove.www.spring.aopAndIoc.demo9.service.BeanService;
 import com.babylove.www.spring.aopAndIoc.demo9.service.BeanServiceImpl;
@@ -31,8 +34,8 @@ public class BeanConfig {
 	 * 也可以配置初始化和销毁方法
 	 * @return
 	 */
-	@Bean(initMethod="init",destroyMethod="destory")
-	public BeanService getBeanService2(){
-		return new BeanServiceImpl();
-	}
+//	@Bean(initMethod="init",destroyMethod="destory")
+//	public BeanService getBeanService2(){
+//		return new BeanServiceImpl();
+//	}
 }

@@ -48,6 +48,6 @@ public class MyDriverManager2 {
 
 	@Override
 	public String toString() {
-		return "MyDriverManager [username=" + username + ", password=" + password + ", url=" + url + "]";
+		return "MyDriverManager2 [username=" + username + ", password=" + password + ", url=" + url + "]";
 	}
 }
