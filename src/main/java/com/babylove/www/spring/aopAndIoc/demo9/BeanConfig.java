@@ -2,11 +2,13 @@ package com.babylove.www.spring.aopAndIoc.demo9;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import com.babylove.www.spring.aopAndIoc.demo9.service.BeanService;
 import com.babylove.www.spring.aopAndIoc.demo9.service.BeanServiceImpl;
 
 /**
+ * 标识为配置
  * 和@bean搭配使用
  * @author zhangjiawei
  *
