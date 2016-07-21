@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx-4.2.xsd 
+						http://www.springframework.org/schema/jee
+						http://www.springframework.org/schema/jee/spring-jee-4.2.xsd 
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	
+	<!-- 作用域默认是singleton,每个容器中只存在一份,可以不用写,这里是为了方便演示 -->
+	<bean id="beanScopeBySingleton" class="com.babylove.www.spring.ioc.demo2.BeanScopeBySingleton" scope="singleton">
+	</bean>
+	
+	<!-- 作用域改为prototype,每次请求都创建新的实例-->
+	<bean id="beanScopeByPrototype" class="com.babylove.www.spring.ioc.demo2.BeanScopeByPrototype" scope="prototype">
+	</bean>
+</beans>

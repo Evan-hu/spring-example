@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+						
+	<context:component-scan base-package="com.babylove.www.spring.ioc.demo10">
+	</context:component-scan>
+	<!-- 
+		使用context:property-placeholder来加载一个配置文件，让我们在xml文件中使用${key}来获取配置文件中的value
+	 -->
+	<context:property-placeholder location="classpath:/ioc/demo10/jdbc.properties"></context:property-placeholder>
+	
+	<!-- 自定义的一个普通类，模拟数据库驱动管理，演示配置文件加载后，怎么取配置文件中值 -->
+	<bean id="myDriverManager" class="com.babylove.www.spring.ioc.demo10.MyDriverManager">
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+	</bean>
+	
+	
+</beans>

@@ -123,8 +123,12 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.7.3</version>
 		</dependency>
-				
-		
+		<!-- 使用JSR330标准，需要引用 -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
 	</dependencies>
 	
 	<build>
