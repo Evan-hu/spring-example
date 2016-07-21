@@ -1,9 +1,9 @@
-#Spring 和 Spring MVC
+#Spring
 
-##`com.babylove.www.spring`
-用一些简单得例子，让大家了解和明白怎么使用spring的最基本功能
+##控制反转
+用13个例子，详细讲述spring中ioc
 
-[走起](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aopAndIoc)
+[走起](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/ioc)
 ##`com.babylove.www.springmvc`
 介绍了springmvc的功能和用法
 
