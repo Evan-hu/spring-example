@@ -5,7 +5,7 @@
 	* 构造器注入
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/ioc/demo1.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/ioc/demo1)
-* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/ioc/demo1/Demo2Test.java)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/ioc/demo1/Demo1Test.java)
 
 ##Bean的作用域
 * singleton : 单例，指一个Bean容器中只存在一份
