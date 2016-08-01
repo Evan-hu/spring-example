@@ -10,15 +10,19 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 	
-	<context:component-scan base-package="com.babylove.www.spring.aop.demo2"></context:component-scan>
+	<context:component-scan base-package="com.babylove.www.spring.aop.demo3"></context:component-scan>
 	
 	<aop:config>
 		<aop:aspect id="beanAspect1" ref="beanAspect">
-<!-- 			<aop:pointcut expression="execution(* com.babylove.www.spring.aop.demo2.service.BeanServiceImpl.save(String, int)) and args(name, age)"" id="beanPointcut"/> -->
-<!-- 			<aop:around method="around" pointcut-ref="beanPointcut"></aop:around> -->
-			<!-- 也可以直接把pointcut写在里面 -->
-			<aop:around method="around"  pointcut="execution(* com.babylove.www.spring.aop.demo2.service.BeanServiceImpl.save(String, int))
-				and args(name, age)"/>
+			<!-- 
+				*号代表任意类型，在类型模式之后添“+”表示该类型的子类型，综合即“任意类型及其子类型”
+				declar-parents匹配到该包下面所有类之后，会为它们指定一个新的父类即com.babylove.www.spring.aop.demo3.Parent(接口)
+			 -->
+			<aop:declare-parents types-matching="com.babylove.www.spring.aop.demo3.aspect.*(+)" 
+				implement-interface="com.babylove.www.spring.aop.demo3.Parent"
+				default-impl="com.babylove.www.spring.aop.demo3.ParentImpl"/>
+				
+			
 		</aop:aspect>
 	</aop:config>
 </beans>

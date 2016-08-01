@@ -30,3 +30,8 @@
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/aop/demo2.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aop/demo2)
 * [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aop/demo2/Demo2Test.java)
+
+#Introductions
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/aop/demo3.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aop/demo3)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aop/demo3/Demo3Test.java)

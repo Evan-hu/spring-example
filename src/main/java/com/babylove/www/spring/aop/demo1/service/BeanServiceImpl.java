@@ -9,6 +9,7 @@ public class BeanServiceImpl implements BeanService{
 		System.out.println("saved");
 //		throw new Exception("exception");
 //		throw new RuntimeException("runtime exception");
+		
 	}
 
 }
