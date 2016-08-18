@@ -21,8 +21,6 @@
 			<aop:declare-parents types-matching="com.babylove.www.spring.aop.demo3.aspect.*(+)" 
 				implement-interface="com.babylove.www.spring.aop.demo3.Parent"
 				default-impl="com.babylove.www.spring.aop.demo3.ParentImpl"/>
-				
-			
 		</aop:aspect>
 	</aop:config>
 </beans>

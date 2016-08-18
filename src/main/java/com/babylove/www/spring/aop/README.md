@@ -35,3 +35,10 @@
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/aop/demo3.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aop/demo3)
 * [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aop/demo3/Demo3Test.java)
+
+#AOP API
+* 这是Spring1.2历史用法，现在仍然支持，也是Spring AOP的基础
+* 现在无论注解或者xml配置的方式，最终的基础都是和API有密切关系的
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/aop/demo4.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aop/demo4)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aop/demo3/Demo4Test.java)
