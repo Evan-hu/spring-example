@@ -41,4 +41,8 @@
 * 现在无论注解或者xml配置的方式，最终的基础都是和API有密切关系的
 * [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/aop/demo4.xml)
 * [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aop/demo4)
-* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aop/demo3/Demo4Test.java)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aop/demo4/Demo4Test.java)
+* 通过定义pointcut拦截指定的方法
+* [xml配置](https://github.com/l81893521/spring-example/tree/master/src/main/resources/aop/demo5.xml)
+* [代码](https://github.com/l81893521/spring-example/tree/master/src/main/java/com/babylove/www/spring/aop/demo5)
+* [测试入口](https://github.com/l81893521/spring-example/blob/master/src/test/java/com/babylove/www/spring/aop/demo5/Demo5Test.java)

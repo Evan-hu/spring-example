@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	
+	<bean id="beanServiceImpl" class="com.babylove.www.spring.aop.demo5.service.BeanServiceImpl"></bean>
+	
+	<bean id="myBeforeAdvice" class="com.babylove.www.spring.aop.demo5.advice.MyBeforeAdvice"></bean>
+	<bean id="myMethodInterceptor" class="com.babylove.www.spring.aop.demo5.advice.MyMethodInterceptor"></bean>
+	<bean id="myAfterReturningAdvice" class="com.babylove.www.spring.aop.demo5.advice.MyAfterReturningAdvice"></bean>
+	<bean id="myThrowsAdvice" class="com.babylove.www.spring.aop.demo5.advice.MyThrowsAdvice"></bean>
+	
+	<!-- 也可以自定义pointcut对指定方法进行拦截 -->
+	<bean id="pointcutBean" class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<property name="mappedNames">
+			<list>
+				<value>sa*</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 通过定义advisor来引用pointcut -->
+	<bean id="beforeAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="myBeforeAdvice"></property>
+		<property name="pointcut" ref="pointcutBean"></property>
+	</bean>
+	
+	<bean id="aroundAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="myMethodInterceptor"></property>
+		<property name="pointcut" ref="pointcutBean"></property>
+	</bean>
+	
+	<bean id="afterAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="myAfterReturningAdvice"></property>
+		<property name="pointcut" ref="pointcutBean"></property>
+	</bean>
+	
+	<bean id="throwsAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="myThrowsAdvice"></property>
+		<property name="pointcut" ref="pointcutBean"></property>
+	</bean>
+	
+	<!-- 
+		ProxyFactoryBean是Spring AOP 最基础，核心的一个类
+		通过这类可以完全控制切入点和通知(advice)以及他们的顺序
+		在代码里面如果获取beanService,得到的不是ProxyFactoryBean,而是ProxyFactoryBean.getObject()得到的对象,也就是target属性中的beanServiceImpl
+		被代理的类如果没有实现任何接口，使用CGLIB代理，否则使用JDK代理
+		
+	 -->
+	<bean id="beanService" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target">
+			<ref bean="beanServiceImpl"/>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>beforeAdvisor</value>
+				<value>aroundAdvisor</value>
+				<value>afterAdvisor</value>
+				<value>throwsAdvisor</value>
+			</list>
+		</property>
+	</bean>
+</beans>
