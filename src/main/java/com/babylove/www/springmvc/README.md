@@ -50,7 +50,7 @@ SpringMVC中，对Model的一种表现形式,当然还有其他的类如Model,�
     2. 绑定基本类型
     3. 绑定数据
     4. @RequestParam注解说明
-    5. [查看代码]()
+    5. [查看代码](https://github.com/l81893521/spring-example/blob/master/src/main/java/com/babylove/www/springmvc/bind/demo1/BindDemo1Controller.java)
 ###1.spring-mvc-dispatcher.xml是springmvc的配置，内有详细的解析,包括:
 	1.context:annotation-config讲解
 	2.context:component-scan讲解
