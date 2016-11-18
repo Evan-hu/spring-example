@@ -12,7 +12,7 @@ public class CourseServiceImpl implements CourseService {
     /**
      * 这个方法并没有去连接数据库
      * 只是手动创建出实体
-     * 并返回
+     * 并返回.
      */
     public Course getCoursebyId(Integer courseId) {
 
