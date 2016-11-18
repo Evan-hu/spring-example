@@ -43,7 +43,14 @@ SpringMVC中，对Model的一种表现形式,当然还有其他的类如Model,�
 负责呈现页面
 
 ##例子
-	通过一些小例子讲述了一下springmvc的功能
+
+### 数据绑定
+* demo1(基本类型绑定)
+    1. 基本类型和包装类型的区别
+    2. 绑定基本类型
+    3. 绑定数据
+    4. @RequestParam注解说明
+    5. [查看代码]()
 ###1.spring-mvc-dispatcher.xml是springmvc的配置，内有详细的解析,包括:
 	1.context:annotation-config讲解
 	2.context:component-scan讲解

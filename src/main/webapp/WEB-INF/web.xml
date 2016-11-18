@@ -23,7 +23,7 @@
 		<!-- 加载指定文件，不配置的话默认加载/WEB-INF/$servlet-name$-servlet.xml -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring-mvc-dispatcher.xml</param-value>
+			<param-value>classpath:mvc/spring-mvc-dispatcher.xml</param-value>
 		</init-param>
 		<!-- 启动时加载 -->
 		<load-on-startup>1</load-on-startup>

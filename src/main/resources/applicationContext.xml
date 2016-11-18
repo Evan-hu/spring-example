@@ -10,8 +10,8 @@
 						http://www.springframework.org/schema/jee/spring-jee-4.2.xsd 
 						http://www.springframework.org/schema/context 
 						http://www.springframework.org/schema/context/spring-context-4.2.xsd">
-						
-	<!-- 
+
+	<!--
 		使用context:annotation-config会自动注册以下6个类 可以进入AnnotationConfigBeanDefinitionParser.class查看
 		org.springframework.context.annotation.internalConfigurationAnnotationProcessor,
 		org.springframework.context.annotation.internalAutowiredAnnotationProcessor,
@@ -35,13 +35,10 @@
 		但是记得要把use-default-filters设置成false
 		否则它还是回去扫描@Controller,@Service,@Repostory,@Component这些标签
 	 -->					
-	<context:component-scan base-package="com.babylove.www" use-default-filters="false">
+	<context:component-scan base-package="com.babylove.www.springmvc" use-default-filters="false">
 		<!-- 只扫描带有@Service,@Repository标签的类,@Controller等标签，交给spring-mvc上下文来进行处理 -->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
 	</context:component-scan>
 	
-	
-	<import resource="/iocAndAop/demo1.xml"/>
-	<import resource="/iocAndAop/demo2.xml"/>
 </beans>

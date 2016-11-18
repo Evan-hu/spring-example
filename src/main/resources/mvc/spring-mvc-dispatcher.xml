@@ -11,7 +11,8 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-        
+
+	<import resource="bind/spring-mvc-bind.xml"/>
 	<!-- 
 		使用context:annotation-config会自动注册以下6个类 可以进入AnnotationConfigBeanDefinitionParser.class查看
 		org.springframework.context.annotation.internalConfigurationAnnotationProcessor,
@@ -36,7 +37,7 @@
 		但是记得要把use-default-filters设置成false
 		否则它还是回去扫描@Controller,@Service,@Repostory,@Component这些标签
 	 -->
-	<context:component-scan base-package="com.babylove.www" use-default-filters="false">
+	<context:component-scan base-package="com.babylove.www.springmvc" use-default-filters="false">
 		<!-- 只扫描带有@Controller标签的类,@Service等其他标签，交给我们的spring上下文来进行处理 -->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
